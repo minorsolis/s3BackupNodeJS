@@ -37,9 +37,8 @@ It will show something like this
 echo "Add the bash code here"
 
 echo "..........................."
-echo "What about mongo dump?"
-echo "then, tar -cvf dump.tar dump"
-echo "and finally mv dump.tar ../data/ (make sure you put the right path in the config.js)"
+echo "cd /your_config_file_path/ && mongodump"
+echo "tar -cvf dump.tar dump"
 echo "..........................."
 
 echo "Finally exec nodejs"
