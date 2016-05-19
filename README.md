@@ -1,4 +1,4 @@
-# AWS S3 Simple File Backups (NodeJs and Bash)
+# AWS S3 Simple File Backups w/ NodeJs
 This is just a simple nodejs script to allow you make automatic backups in S3. We will use it to backup a mongoDb database.
 
 ## Requirements
