@@ -8,17 +8,17 @@ This is just a simple nodejs script to allow you make automatic backups in S3. W
 ## Installation
 #### #1 Clone this repository
 ```
-git clone: https://github.com/minorsolis/s3BackupNodeJS.git
-cd s3BackupNodeJS
+$ git clone: https://github.com/minorsolis/s3BackupNodeJS.git
+$ cd s3BackupNodeJS
 ```
 #### #2 Go inside the app/config folder
 ```
-cd app/config/
+$ cd app/config/
 ```
 
 #### #3 Create your own config.js
 ```
-cp -rp config.example.js config.js
+$ cp -rp config.example.js config.js
 ```
 #### #4 Add your credentials and configuration
 ```
@@ -27,7 +27,7 @@ cp -rp config.example.js config.js
   aws_s3_bucket: 'aws_s3_bucket',
   file_path: '/path_to_your_file/'
 ```
-## Optional
+## Optional: extend with bash
 The folder includes a cron folder with a bit of bash code, just in case you need to extend this app.
 ```
 open => cron/script.sh
@@ -45,4 +45,18 @@ echo "Finally exec nodejs"
 cd ../app/
 node index.js
 ```
+### Setup the cron daily (or at anytime)
 
+#### #1 Set the permissions
+```
+$ chmod 775 script.sh
+```
+
+#### #2 Edit the file cron/setCron.sh
+```
+0 1 * * * /{your_path}/cron/script.sh
+```
+#### #3 Setup the cron job
+```
+$ crontab setCron.sh
+```

@@ -1,0 +1,1 @@
+0 1 * * * /your_path/cron/script.sh
