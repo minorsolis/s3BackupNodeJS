@@ -1,10 +1,22 @@
 module.exports = {
 	putObject:function(AWS,fs,config){
+			
+			var param1 = process.argv[2];
+			var param2 = process.argv[3];
+
+			if(param1 == undefined){
+				param1 	= config.file_path;
+			}
+
+			if(param2 == undefined){
+				param2 	= config.aws_s3_backup_sufix;
+			}
+
 			// read the file
-			var body = fs.createReadStream(config.file_path);
+			var body = fs.createReadStream(param1);
 
 			// get file name
-			var s3FileName = new Date().toJSON().slice(0,19) + '_' + config.aws_s3_backup_sufix;
+			var s3FileName = new Date().toJSON().slice(0,19) + '_' + param2;
 
 			// get s3
 			var s3 = new AWS.S3(); 
